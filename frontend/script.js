@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const API_URL = 'http://127.0.0.1:8000/api';
+  const API_URL = 'https://ai-code-helper-1.onrender.com/api';
 
   const codeInput = document.getElementById('codeInput');
   const languageSelect = document.getElementById('language');
