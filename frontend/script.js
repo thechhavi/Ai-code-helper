@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const API_URL = 'http://127.0.0.1:8000/api';
 
-  // --- HOME PAGE LOGIC ---
   const codeInput = document.getElementById('codeInput');
   const languageSelect = document.getElementById('language');
   const submitBtn = document.getElementById('submitBtn');
@@ -12,23 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentAction = 'explain';
 
   if (codeInput && submitBtn) {
-    // Handle action selection
+
     actionBtns.forEach(btn => {
-      // only for the explain/debug/improve buttons on home page
+
       if (btn.hasAttribute('data-action')) {
         btn.addEventListener('click', () => {
           actionBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentAction = btn.getAttribute('data-action');
-          
-          // Update button text
+ 
           const actionText = currentAction.charAt(0).toUpperCase() + currentAction.slice(1);
           submitBtn.innerHTML = `▶ ${actionText} code`;
         });
       }
     });
 
-    // Handle code submission
     submitBtn.addEventListener('click', async () => {
       const code = codeInput.value.trim();
       if (!code) {
@@ -37,8 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const language = languageSelect.value;
-      
-      // UI Loading state
+
       submitBtn.disabled = true;
       submitBtn.innerText = 'Processing...';
       outputContent.innerHTML = '<span style="color: var(--text-muted)">Thinking...</span>';
@@ -56,8 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const data = await response.json();
-        
-        // Render response securely (escaping HTML but preserving line breaks)
+
         outputContent.textContent = data.response;
         statusText.innerHTML = '<span style="color: var(--accent-green)">done</span>';
       } catch (error) {
@@ -72,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- CONTACT PAGE LOGIC ---
   const contactForm = document.getElementById('contactForm');
   const contactSubmitBtn = document.getElementById('contactSubmitBtn');
   const contactStatusText = document.getElementById('contactStatusText');
@@ -108,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- HISTORY PAGE LOGIC ---
   const historyContainer = document.getElementById('historyContainer');
   const historyCount = document.getElementById('historyCount');
   const refreshHistoryBtn = document.getElementById('refreshHistoryBtn');
@@ -177,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Utility to escape HTML to prevent XSS in rendering
   function escapeHtml(unsafe) {
     return unsafe
          .replace(/&/g, "&amp;")
