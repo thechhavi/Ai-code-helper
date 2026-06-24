@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History - AI Code Helper</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="window-controls">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <nav>
+      <a href="index.html">home.js</a>
+      <a href="contact.html">contact.txt</a>
+      <a href="history.html" class="active">history.log</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="status-badge">
+      <span class="indicator"></span>
+      past queries
+    </div>
+
+    <h1>Everything you've <span>asked so far</span>.</h1>
+    <p class="subtitle">Every Explain, Debug, and Improve request is saved automatically. Click a row to expand the code and the AI's response.</p>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <div class="status-text" id="historyCount">0 saved entries</div>
+      <button class="action-btn" id="refreshHistoryBtn">↺ refresh</button>
+    </div>
+
+    <div id="historyContainer">
+      <!-- History items will be populated here by JS -->
+      <div style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem;">Loading history...</div>
+    </div>
+
+  </main>
+
+  <footer>
+    AI Code Helper · built for the CodeAlpha Full Stack Internship · FastAPI + Gemini
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

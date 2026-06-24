@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - AI Code Helper</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="window-controls">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <nav>
+      <a href="index.html">home.js</a>
+      <a href="contact.html" class="active">contact.txt</a>
+      <a href="history.html">history.log</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="status-badge">
+      <span class="indicator"></span>
+      reach out
+    </div>
+
+    <h1>Found a bug, or just want to <span>say hi</span>?</h1>
+    <p class="subtitle">Send a message and it'll be saved straight to the project's database. We read every one.</p>
+
+    <div class="editor-card">
+      <div class="editor-header">
+        <div class="status-text">contact.txt</div>
+      </div>
+      
+      <div style="padding: 1.5rem;">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" id="name" class="form-control" placeholder="Ada Lovelace" required>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" id="email" class="form-control" placeholder="ada@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">message</label>
+            <textarea id="message" class="form-control" placeholder="Tell us what's on your mind..." style="height: 120px;" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn btn-purple" id="contactSubmitBtn">Send message</button>
+        </form>
+      </div>
+      
+      <div class="editor-footer">
+        <div class="status-text" id="contactStatusText">saved to messages.db</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    AI Code Helper · built for the CodeAlpha Full Stack Internship · FastAPI + Gemini
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

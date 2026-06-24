@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Helper</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="window-controls">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <nav>
+      <a href="index.html" class="active">home.js</a>
+      <a href="contact.html">contact.txt</a>
+      <a href="history.html">history.log</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="status-badge">
+      <span class="indicator"></span>
+      ai-code-helper • gemini-powered
+    </div>
+
+    <h1>Paste code. Pick a tool. Get a <span>straight answer</span>.</h1>
+    <p class="subtitle">Drop in any snippet and let AI explain how it works, point out bugs, or suggest a cleaner version — no setup, no sign-up.</p>
+
+    <div class="editor-card">
+      <div class="editor-header">
+        <button class="action-btn active" data-action="explain">explain</button>
+        <button class="action-btn" data-action="debug">debug</button>
+        <button class="action-btn" data-action="improve">improve</button>
+
+        <div class="lang-select">
+          <label for="language">lang:</label>
+          <select id="language">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <textarea id="codeInput" placeholder="// Paste your code here...&#10;def add(a, b):&#10;    return a + b"></textarea>
+
+      <div class="editor-footer">
+        <div class="status-text" id="statusText">ready</div>
+        <button class="submit-btn" id="submitBtn">▶ Explain code</button>
+      </div>
+    </div>
+
+    <div class="output-card">
+      <div class="output-header">output</div>
+      <div class="output-content" id="outputContent">
+        Run a tool above and the AI's response will show up here.
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Paste your code</h3>
+        <p>Drop a function, a class, or a whole file into the editor and pick its language.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>Choose a tool</h3>
+        <p>Explain breaks it down in plain English. Debug hunts for bugs. Improve cleans it up.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Read the answer</h3>
+        <p>The AI's response appears in the output panel and is saved to your history automatically.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    AI Code Helper · built for the CodeAlpha Full Stack Internship · FastAPI + Gemini
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
